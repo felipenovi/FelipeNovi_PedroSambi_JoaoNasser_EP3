@@ -10,6 +10,7 @@ entrada_informacoes.strip()
 info = entrada_informacoes.split(',')
 
 
+
 nome = info[0]
 sexo = info[3]
 idade = int(info[1])
@@ -54,28 +55,32 @@ elif sexo == "f" or sexo == "F":
 diario = {}
 entrada_usuario.readline()
 linhasdiario = entrada_usuario.readlines() 
+a = []
+for i in linhasdiario:
+    a.append(i.strip())
+for i in range(len(a)):
+    a[i] = a[i].split(',')
+    a[i][2] = float(a[i][2])
 
-pedacos = linhasdiario.split(",")
-diario[pedacos[0]] += (float(pedacos[2]*Calorias[info2[0]])/Quantidade
-
-    
-    
+print(a)
+alimento = {}   
 entrada_alimentos = open("alimentos.csv","r+")
 linhas = entrada_alimentos.readlines()
 linhas_limpas = []                            
 for i in linhas:
     linhas_limpas.append(i.strip())
-alimentos = {}
 for l in linhas_limpas[1:]:                        
     info2 = l.split(',')
-     
-Alimento = info2[0] 
-Quantidade = float(info2[1])
-Calorias = float(info2[2]) 
-Proteínas = float(info2[3])
-Carboidratos = float(info2[4]) 
-Gorduras = float(info2[5])
- 
+    alimento[info2[0]] = list()                                      #Alimento      
+    alimento[info2[0]].append(float(info2[1]))                       #Quantidade
+    alimento[info2[0]].append(float(info2[2])/float(info2[1]))       #Calorias
+    alimento[info2[0]].append((float(info2[3])/float(info2[1])))     #Proteínas
+    alimento[info2[0]].append((float(info2[4])/float(info2[1])))     #Carboidratos
+    alimento[info2[0]].append((float(info2[5])/float(info2[1])))     #Gorduras
+
+
+  
+  
   
 
     
