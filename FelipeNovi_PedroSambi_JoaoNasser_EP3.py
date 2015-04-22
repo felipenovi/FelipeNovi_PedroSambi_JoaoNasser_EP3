@@ -54,11 +54,13 @@ elif sexo == "f" or sexo == "F":
 diario = {}
 entrada_usuario.readline()
 linhasdiario = entrada_usuario.readlines() 
-for line in linhasdiario:
-    print(line)
+
+pedacos = linhasdiario.split(",")
+diario[pedacos[0]] += (float(pedacos[2]*Calorias[info2[0]])/Quantidade
+
     
     
-entrada_alimentos = open("alimentos.csv","r")
+entrada_alimentos = open("alimentos.csv","r+")
 linhas = entrada_alimentos.readlines()
 linhas_limpas = []                            
 for i in linhas:
