@@ -50,3 +50,10 @@ elif sexo == "f" or sexo == "F":
 	HBm = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * atividade	
 """	
 
+
+diario = {}
+entrada_usuario.readline()
+linhasdiario = entrada_usuario.readlines() 
+for line in linhasdiario:
+    print(line)
+    
