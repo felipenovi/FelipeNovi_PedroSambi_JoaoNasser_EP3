@@ -6,7 +6,7 @@
 entrada_usuario = open("usuario.csv","r")
 entrada_usuario.readline()
 entrada_informacoes = entrada_usuario.readline()
-entrada_informacoes.strip()
+entrada_informacoes = entrada_informacoes.strip()
 info = entrada_informacoes.split(",")
 
 
@@ -39,15 +39,15 @@ arquivo_txt.write("O seu Indice de massa corporea é %s \n"%IMC)
 arquivo_txt.write("voce esta %s \n"%imc_usuario)
 
 
-if atividade == ("minimo\n"):
+if atividade == ("minimo"):
     info[5] = 1.2
-elif atividade == ("baixo\n"):
+elif atividade == ("baixo"):
     info[5] = 1.375
-elif atividade == ("medio\n"):
+elif atividade == ("medio"):
     info[5] = 1.55
-elif atividade == ("alto\n"):
+elif atividade == ("alto"):
     info[5] = 1.725
-elif atividade == ("muito alto\n"):
+elif atividade == ("muito alto"):
     info[5] = 1.9
 #Fórmula consumo de caloria ideal
 if sexo == "m" or sexo == "M":
@@ -66,7 +66,7 @@ for i in linhasdiario:
 for i in range(len(a)):
     a[i] = a[i].split(',')
     a[i][2] = float(a[i][2])
-print(a)
+print("a ", a)
 
 
 alimento = {}   
@@ -84,23 +84,33 @@ for l in linhas_limpas[1:]:
     alimento[info2[0]].append((float(info2[4])/float(info2[1])))     #Carboidratos
     alimento[info2[0]].append((float(info2[5])/float(info2[1])))     #Gorduras
 
-datas = []
-    
+
+dic_calorias = {}
+
+datas = []    
 for i in range(len(a)):
     datas.append(a[i][0])
-
-
 for i in range(len(a)):
     if a[i][1] in alimento.keys():
-        calorias = (alimento[a[i][1]][2])
-        proteinas = (alimento[a[i][1]][3])
-        carbos = (alimento[a[i][1]][4])
-        gorduras = (alimento[a[i][1]][5])
+        calorias = (alimento[a[i][1]][1])
+        proteinas = (alimento[a[i][1]][2])
+        carbos = (alimento[a[i][1]][3])
+        gorduras = (alimento[a[i][1]][4])
         calorias_totais = a[i][2]*calorias
         proteinas_totais = a[i][2]*proteinas
         carbos_totais = a[i][2]*carbos
         gorduras_totais = a[i][2]*gorduras
-       
         
+        if a[i][0] in dic_calorias:
+            dic_calorias[a[i][0]] += calorias_totais
+        else:
+            dic_calorias[a[i][0]] = calorias_totais
+            
+          
+       
+       
+print("datas ", datas)
+
+print("calorias por dia", dic_calorias)      
         
 
