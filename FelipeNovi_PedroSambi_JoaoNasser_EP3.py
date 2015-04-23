@@ -39,21 +39,21 @@ arquivo_txt.write("O seu Indice de massa corporea é %s \n"%IMC)
 arquivo_txt.write("voce esta %s \n"%imc_usuario)
 
 
-if atividade == ("minimo"):
+if atividade == ("minimo\n"):
     info[5] = 1.2
-elif atividade == ("baixo"):
+elif atividade == ("baixo\n"):
     info[5] = 1.375
-elif atividade == ("medio"):
+elif atividade == ("medio\n"):
     info[5] = 1.55
-elif atividade == ("alto"):
+elif atividade == ("alto\n"):
     info[5] = 1.725
-elif atividade == ("muito alto"):
+elif atividade == ("muito alto\n"):
     info[5] = 1.9
 #Fórmula consumo de caloria ideal
 if sexo == "m" or sexo == "M":
-    TMB = (88.362 + (13.397 * float(peso)) + (4.799 * float(altura)) - (5.677 * float(idade)) * float(info[5])
-if sexo == "f" or sexo == "F":  
-    TMB = (447.593 + (9.247 * float(peso)) + (3.098 * float(altura)) - (4.330 * float(idade)) * float(info[5]) 	
+    TMB = (88.362 + (13.397 * float(peso)) + (4.799 * float(altura)) - (5.677 * float(idade))) * float(info[5])
+elif sexo == "f" or sexo == "F":  
+    TMB = (447.593 + (9.247 * float(peso)) + (3.098 * float(altura)) - (4.330 * float(idade))) * float(info[5]) 	
 print(TMB)
 
 
@@ -67,9 +67,8 @@ for i in range(len(a)):
     a[i] = a[i].split(',')
     a[i][2] = float(a[i][2])
 print(a)
-"""
-diario[a[i][0]] += float(a[i][2]*info2[2])
-"""
+
+
 alimento = {}   
 entrada_alimentos = open("alimentos.csv","r+")
 linhas = entrada_alimentos.readlines()
