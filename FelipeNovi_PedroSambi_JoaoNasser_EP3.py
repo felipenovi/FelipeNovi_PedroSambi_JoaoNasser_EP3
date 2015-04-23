@@ -7,8 +7,7 @@ entrada_usuario = open("usuario.csv","r")
 entrada_usuario.readline()
 entrada_informacoes = entrada_usuario.readline()
 entrada_informacoes.strip()
-info = entrada_informacoes.split(',')
-
+info = entrada_informacoes.split(",")
 
 
 nome = info[0]
@@ -35,8 +34,6 @@ elif IMC >35 and IMC <39.99:
 elif IMC>40:
 	imc_usuario = "Você está no nível de obesidade morbida"
 print(imc_usuario)
-
-
 arquivo_txt = open("newfile.txt","w")
 arquivo_txt.write("O seu Indice de massa corporea é %s \n"%IMC)
 arquivo_txt.write("voce esta %s \n"%imc_usuario)
@@ -54,10 +51,11 @@ elif atividade == ("muito alto"):
     atividade = 1.9
 #Fórmula consumo de caloria ideal
 if sexo == "m" or sexo =="M":
-	HB = (88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)) 
+	TMB = (88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)) * atividade
 elif sexo == "f" or sexo == "F":
-	HB = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) 	
-print(HB)
+	TMB = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * atividade 	
+print(TMB)
+
 
 
 diario = {}
@@ -88,9 +86,5 @@ for l in linhas_limpas[1:]:
     alimento[info2[0]].append((float(info2[5])/float(info2[1])))     #Gorduras
 
 
-  
-  
-  
+diario[a[i][0]] += float(a[i][2]*info2[2])
 
-    
-    
