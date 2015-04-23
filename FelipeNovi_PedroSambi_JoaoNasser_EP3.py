@@ -86,6 +86,10 @@ for l in linhas_limpas[1:]:
 
 
 dic_calorias = {}
+dic_proteinas = {}
+dic_carbos = {}
+dic_gorduras = {}
+
 
 datas = []    
 for i in range(len(a)):
@@ -106,6 +110,24 @@ for i in range(len(a)):
         else:
             dic_calorias[a[i][0]] = calorias_totais
             
+        if a[i][0] in dic_proteinas:
+            dic_proteinas[a[i][0]] += proteinas_totais
+        else:
+            dic_proteinas[a[i][0]] = proteinas_totais
+            
+        if a[i][0] in dic_carbos:
+            dic_carbos[a[i][0]] += carbos_totais
+        else:
+            dic_carbos[a[i][0]] = carbos_totais
+            
+        if a[i][0] in dic_gorduras:
+            dic_gorduras[a[i][0]] += gorduras_totais
+        else:
+            dic_gorduras[a[i][0]] = gorduras_totais
+            
+
+            
+        
           
        
        
@@ -113,4 +135,3 @@ print("datas ", datas)
 
 print("calorias por dia", dic_calorias)      
         
-
