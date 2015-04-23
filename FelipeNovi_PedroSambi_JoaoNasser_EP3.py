@@ -134,14 +134,23 @@ print("calorias por dia", dic_calorias,"kcal")
 print("porteinas por dia", dic_proteinas,"g")
 print("carboidratos por dia", dic_carbos,"g")
 print("gorduras por dia", dic_gorduras, "g")      
-        
-        
+
+
+
+list_calorias = list(dic_calorias.values())
+dias = list(range(len(list_calorias)))
+names = list(dic_calorias.keys())
+
+list_tmb = [TMB] * len(dias)
+   
 import matplotlib.pyplot as plt
     
-plt.plot(dic_calorias[a[i][0]],a[i][0], 'blue')
-plt.axis([0,7,0,3000])
+plt.plot(dias,list_calorias, 'blue')
+plt.plot(dias, list_tmb, "red")
+plt.axis([0,len(dias)-1,0,3000])
 plt.ylabel("Calorias (kcal)")
 plt.xlabel ("Dias")
+plt.xticks(list(range(len(names))), names)
 plt.title ("Consumo de calorias diário")
 plt.show()
 
@@ -165,3 +174,8 @@ plt.ylabel("Gorduras (g)")
 plt.xlabel ("Dias")
 plt.title ("Consumo de gorduras diário")
 plt.show()
+
+
+
+
+
