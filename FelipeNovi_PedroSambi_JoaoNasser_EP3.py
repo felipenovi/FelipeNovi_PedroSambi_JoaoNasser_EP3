@@ -68,8 +68,9 @@ for i in range(len(a)):
     a[i] = a[i].split(',')
     a[i][2] = float(a[i][2])
 print(a)
-
-
+"""
+diario[a[i][0]] += float(a[i][2]*info2[2])
+"""
 alimento = {}   
 entrada_alimentos = open("alimentos.csv","r+")
 linhas = entrada_alimentos.readlines()
@@ -85,6 +86,25 @@ for l in linhas_limpas[1:]:
     alimento[info2[0]].append((float(info2[4])/float(info2[1])))     #Carboidratos
     alimento[info2[0]].append((float(info2[5])/float(info2[1])))     #Gorduras
 
+datas = []
+    
+for i in range(len(a)):
+    datas.append(a[i][0])
 
-diario[a[i][0]] += float(a[i][2]*info2[2])
+print(datas)
+
+for i in range(len(a)):
+    if a[i][1] in alimento.keys():
+        calorias = (alimento[a[i][1]][2])
+        proteinas = (alimento[a[i][1]][3])
+        carbos = (alimento[a[i][1]][4])
+        gorduras = (alimento[a[i][1]][5])
+        
+        calorias_totais = a[i][2]*calorias
+        proteinas_totais = a[i][2]*proteinas
+        carbos_totais = a[i][2]*carbos
+        gorduras_totais = a[i][2]*gorduras
+        
+        
+        
 
