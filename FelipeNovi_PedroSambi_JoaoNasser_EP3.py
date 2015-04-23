@@ -126,8 +126,8 @@ for i in range(len(a)):
         else:
             dic_gorduras[a[i][0]] = gorduras_totais
             
- 
-                
+
+
 print("datas ", datas)
 
 print("calorias por dia", dic_calorias,"kcal")
@@ -135,3 +135,33 @@ print("porteinas por dia", dic_proteinas,"g")
 print("carboidratos por dia", dic_carbos,"g")
 print("gorduras por dia", dic_gorduras, "g")      
         
+        
+import matplotlib.pyplot as plt
+    
+plt.plot(dic_calorias[a[i][0]],a[i][0], 'blue')
+plt.axis([0,7,0,3000])
+plt.ylabel("Calorias (kcal)")
+plt.xlabel ("Dias")
+plt.title ("Consumo de calorias diário")
+plt.show()
+
+plt.plot(dic_proteinas[a[i][0]],a[i][0], 'blue')
+plt.axis([0,7,0,3000])
+plt.ylabel("Proteinas (g)")
+plt.xlabel ("Dias")
+plt.title ("Consumo de proteinas diário")
+plt.show()
+
+plt.plot(dic_carbos[a[i][0]],a[i][0], 'blue')
+plt.axis([0,7,0,3000])
+plt.ylabel("Carboidratos (g)")
+plt.xlabel ("Dias")
+plt.title ("Consumo de carboidratos diário")
+plt.show()
+
+plt.plot(dic_gorduras[a[i][0]],a[i][0], 'blue')
+plt.axis([0,7,0,3000])
+plt.ylabel("Gorduras (g)")
+plt.xlabel ("Dias")
+plt.title ("Consumo de gorduras diário")
+plt.show()
