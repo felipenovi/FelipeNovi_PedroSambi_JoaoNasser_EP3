@@ -133,5 +133,8 @@ for i in range(len(a)):
        
 print("datas ", datas)
 
-print("calorias por dia", dic_calorias)      
+print("calorias por dia", dic_calorias,"kcal")
+print("porteinas por dia", dic_proteinas,"g")
+print("carboidratos por dia", dic_carbos,"g")
+print("gorduras por dia", dic_gorduras, "g")      
         
