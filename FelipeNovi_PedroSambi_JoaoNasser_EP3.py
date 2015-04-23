@@ -40,20 +40,20 @@ arquivo_txt.write("voce esta %s \n"%imc_usuario)
 
 
 if atividade == ("minimo"):
-    atividade = 1.2
+    info[5] = 1.2
 elif atividade == ("baixo"):
-    atividade = 1.375
+    info[5] = 1.375
 elif atividade == ("medio"):
-    atividade = 1.55
+    info[5] = 1.55
 elif atividade == ("alto"):
-    atividade = 1.725
+    info[5] = 1.725
 elif atividade == ("muito alto"):
-    atividade = 1.9
+    info[5] = 1.9
 #Fórmula consumo de caloria ideal
 if sexo == "m" or sexo =="M":
-	TMB = (88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)) * atividade
+	TMB = (88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)) * info[5]
 elif sexo == "f" or sexo == "F":
-	TMB = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * atividade 	
+	TMB = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * info[5] 	
 print(TMB)
 
 
@@ -91,7 +91,6 @@ datas = []
 for i in range(len(a)):
     datas.append(a[i][0])
 
-print(datas)
 
 for i in range(len(a)):
     if a[i][1] in alimento.keys():
@@ -99,12 +98,11 @@ for i in range(len(a)):
         proteinas = (alimento[a[i][1]][3])
         carbos = (alimento[a[i][1]][4])
         gorduras = (alimento[a[i][1]][5])
-        
         calorias_totais = a[i][2]*calorias
         proteinas_totais = a[i][2]*proteinas
         carbos_totais = a[i][2]*carbos
         gorduras_totais = a[i][2]*gorduras
-        
+       
         
         
 
