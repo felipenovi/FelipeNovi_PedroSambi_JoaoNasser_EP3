@@ -50,12 +50,11 @@ elif atividade == ("alto"):
 elif atividade == ("muito alto"):
     info[5] = 1.9
 #Fórmula consumo de caloria ideal
-if sexo == "m" or sexo =="M":
-	TMB = (88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)) * info[5]
-elif sexo == "f" or sexo == "F":
-	TMB = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * info[5] 	
+if sexo == "m" or sexo == "M":
+    TMB = (88.362 + (13.397 * float(peso)) + (4.799 * float(altura)) - (5.677 * float(idade)) * float(info[5])
+if sexo == "f" or sexo == "F":  
+    TMB = (447.593 + (9.247 * float(peso)) + (3.098 * float(altura)) - (4.330 * float(idade)) * float(info[5]) 	
 print(TMB)
-
 
 
 diario = {}
