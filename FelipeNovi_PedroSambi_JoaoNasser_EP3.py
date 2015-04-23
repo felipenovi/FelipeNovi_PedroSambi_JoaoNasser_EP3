@@ -105,6 +105,7 @@ for i in range(len(a)):
         carbos_totais = a[i][2]*carbos
         gorduras_totais = a[i][2]*gorduras
         
+        
         if a[i][0] in dic_calorias:
             dic_calorias[a[i][0]] += calorias_totais
         else:
@@ -125,12 +126,8 @@ for i in range(len(a)):
         else:
             dic_gorduras[a[i][0]] = gorduras_totais
             
-
-            
-        
-          
-       
-       
+ 
+                
 print("datas ", datas)
 
 print("calorias por dia", dic_calorias,"kcal")
